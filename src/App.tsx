@@ -1,8 +1,16 @@
-
+import Header from "./components/Header"
+import styles from "./App.module.css";
+import NewTask from "./components/NewTask";
 function App() {
 
   return (
-    <h1>Helooooo</h1>
+    <main>
+      <Header />
+
+      <div className={styles.container}>
+        <NewTask />
+      </div>
+    </main>
   )
 }
 
