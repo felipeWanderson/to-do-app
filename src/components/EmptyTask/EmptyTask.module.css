@@ -1,0 +1,26 @@
+.emptyContainer {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6.4rem 2.4rem;
+  gap: 1.6rem;
+
+
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px; 
+}
+
+.emptyTaskText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 1.6rem;
+  line-height: 140%;
+
+  text-align: center;
+  color: var(--gray-300);
+}
