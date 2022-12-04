@@ -3,6 +3,8 @@ import styles from "./App.module.css";
 import NewTask from "./components/NewTask";
 import InfoTask from "./components/InfoTask";
 import EmptyTask from "./components/EmptyTask";
+import ListTask from "./components/ListTask";
+
 function App() {
 
   return (
@@ -14,7 +16,8 @@ function App() {
 
         <div className={styles.taskContainer}>
           <InfoTask />
-          <EmptyTask />
+          <ListTask />
+          {/* <EmptyTask /> */}
         </div>
       </div>
     </main>

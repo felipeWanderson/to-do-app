@@ -1,0 +1,114 @@
+.taskContainer {
+  width: 100%;
+  height: 7.2rem;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem;
+  gap: 1.2rem;
+
+  background: var(--gray-500);
+
+  border: 1px solid var(--gray-400);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+}
+
+.taskContainer + .taskContainer {
+  margin-top: 1.2rem;
+}
+
+input + label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+}
+.taskContainer input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  
+}
+
+input[type=radio]:not(:checked) + label::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: solid 2px var(--blue-500);
+  vertical-align: bottom;
+}
+
+input[type=radio]:not(:checked) + label:hover::before {
+  content: '';
+  border: solid 2px var(--blue-800);
+  background-color: var(--blue-800-alpha);
+}
+
+input[type=radio]:checked + label::before {
+  content: '';
+  border: none;
+  
+}
+input[type=radio]:checked + label::after {
+  content: '';
+  background: url('../../assets/check.svg') no-repeat center;
+  background-color: var(--purple-800);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  left: -10px;
+  bottom: 0px;
+}
+
+input[type=radio]:checked + label:hover::after {
+  content: '';
+  background-color: var(--purple-500);
+}
+
+.taskText {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 140%;
+  color: var(--gray-100);
+}
+
+.taskTextDone {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 140%;
+  text-decoration-line: line-through;
+
+  color:  var(--gray-300);
+
+}
+
+.taskContainer button {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--gray-300);
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.taskContainer button:hover {
+  background: var(--gray-400);
+  color: var(--red-500);
+  
+  
+}
