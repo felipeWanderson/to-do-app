@@ -57,3 +57,25 @@
 .newTaskContainer button:hover {
   background: var(--blue-500);
 }
+
+@media screen and (max-width: 768px) {
+  .newTaskContainer form {
+    flex-direction: column;
+  }
+
+  .newTaskContainer input {
+    width: 100%;
+    height: 3.2rem;
+    padding: 1.2rem;
+  }
+
+  .newTaskContainer input::placeholder {
+    font-size: 1.2rem;
+  }
+
+  .newTaskContainer button {
+    width: 100%;
+    height: 4rem;
+    padding: 0;
+  }
+}

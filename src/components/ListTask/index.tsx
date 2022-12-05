@@ -1,51 +1,18 @@
-import {useState} from 'react';
 import Task from '../Task';
 import styles from './ListTask.module.css';
 
 type Task = {
-  id: number,
+  id: string,
   description: string,
   isComplete: boolean
 }
 
-function ListTask() {
-  const defaultTask = [
-    {
-      id: 1,
-      description: 'Tarefa 1',
-      isComplete: false
-    },
-    {
-      id: 2,
-      description: 'Tarefa 2',
-      isComplete: false
-    },
-    {
-      id: 3,
-      description: 'Tarefa 3',
-      isComplete: false
-    },
-    {
-      id: 4,
-      description: 'Tarefa 4',
-      isComplete: false
-    },
-  ];
-
-  const [tasks, setTasks] = useState<Task[]>(defaultTask);
-
-  const handleTaskComplete = (id: number) => {
-    const updatedTask = tasks.map((task) =>
-    task.id === id
-      ? {
-          ...task,
-          isComplete: !task.isComplete,
-        }
-      : task
-  );
-
-  setTasks(updatedTask);
-  }
+interface ListTaskProps {
+  tasks: Task[];
+  handleTaskComplete: (id: string) => void;
+  handleDeleteTask: (id: string) => void;
+}
+function ListTask({tasks, handleTaskComplete, handleDeleteTask}: ListTaskProps) {
   
   return (
     <div className={styles.listTaskContainer}>
@@ -54,9 +21,11 @@ function ListTask() {
           key={task.id}
           readOnly
           id={`inputradio__${task.id}`}
+          taskId={task.id}
           description={task.description}
           checked={task.isComplete}
-          onClick={() => handleTaskComplete(task.id)} 
+          onClick={() => handleTaskComplete(task.id)}
+          handleDeleteTask={handleDeleteTask}
         />
       ))}
     </div>

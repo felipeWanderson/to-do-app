@@ -24,3 +24,12 @@
   text-align: center;
   color: var(--gray-300);
 }
+
+@media screen and (max-width: 768px) {
+  .emptyContainer {
+    padding: 2.4rem;
+  }
+  .emptyTaskText {
+    font-size: 1.2rem;
+  }
+}

@@ -109,6 +109,14 @@ input[type=radio]:checked + label:hover::after {
 .taskContainer button:hover {
   background: var(--gray-400);
   color: var(--red-500);
-  
-  
+}
+
+@media screen and (max-width: 768px) {
+  .taskContainer {
+    height: 100%;
+  }
+
+  .taskText, .taskTextDone {
+    font-size: 1.2rem;
+  }
 }

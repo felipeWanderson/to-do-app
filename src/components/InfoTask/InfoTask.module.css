@@ -33,3 +33,32 @@
 
   color: var(--gray-200);
 }
+
+@media screen and (max-width: 768px) {
+  .infoTaskContainer {
+    margin-top: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+  .infoTaskContainer strong {
+    font-size: 1.2rem;
+  }
+
+  .infoTaskCreated, .infoTaskDone {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .infoTaskCreated span, 
+.infoTaskDone span {
+  font-size: 1rem;
+}
+}
+@media screen and (max-width: 320px) {
+  .infoTaskContainer strong {
+    font-size: 1rem;
+  }
+}
